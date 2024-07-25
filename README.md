@@ -5,7 +5,7 @@ Repositório que responde ao desafio técnico proposto.
 Versões usadas:
 
 PHP Version 8.2.4 /
-Biblioteca do JavaScript: FullCalendar versão 6.1.7 / 
+FullCalendar versão 6.1.7 / 
 Bootstrap 5.0.2 / 
 10.4.28-MariaDB / 
 phpMyAdmin  5.2.1.
