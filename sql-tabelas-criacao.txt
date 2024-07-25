@@ -1,0 +1,22 @@
+-- Tabela para usuários
+CREATE TABLE usuarios (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    login VARCHAR(50) UNIQUE NOT NULL,
+    senha VARCHAR(255) NOT NULL
+);
+
+-- Tabela para atividades
+CREATE TABLE atividades (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    usuario_id INT NOT NULL,
+    nome VARCHAR(100) NOT NULL,
+    descricao TEXT,
+    data_inicio DATE NOT NULL,
+    hora_inicio TIME NOT NULL,
+    data_termino DATE NOT NULL,
+    hora_termino TIME NOT NULL,
+    status ENUM('pendente', 'concluída', 'cancelada') DEFAULT 'pendente',
+    FOREIGN KEY (usuario_id) REFERENCES usuarios(id)
+);
+
+ALTER TABLE usuarios MODIFY login VARCHAR(255) COLLATE utf8_bin; -- Comando para fazer com que o banco diferencie o login contendo Maiúsculas e Minúsculas.
